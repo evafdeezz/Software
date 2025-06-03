@@ -2,7 +2,7 @@ trigger:
 - master
 
 variables:
-  azureServiceConnectionId: 'BorjaB2Relecloud'
+  azureServiceConnectionId: 'github.com_evafdeezz'
   webAppName: 'borja-relecloud-drhhfffnbbhcb0hf'
   vmImageName: 'ubuntu-latest'
   environmentName: 'borja-relecloud-drhhfffnbbhcb0hf'
