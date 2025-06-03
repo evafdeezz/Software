@@ -7,7 +7,7 @@ variables:
   vmImageName: 'ubuntu-latest'
   environmentName: 'borja-relecloud-drhhfffnbbhcb0hf'
   projectRoot: $(System.DefaultWorkingDirectory)
-  pythonVersion: '3.11'
+  pythonVersion: '3.12'
 
 stages:
 - stage: Build
