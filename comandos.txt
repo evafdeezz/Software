@@ -1,0 +1,8 @@
+py -m venv venv
+python.ese -m pip install 
+pip install -r requirements.txt
+deactivate //Slair del entorno virtual
+django-admin startproject project /usr/bin/bash
+django-admin sratapp relecloud
+python manage.py runserver
+py manage.py createsuperuser

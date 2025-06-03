@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ReleCloud - Destinations
+{% endblock %}
+
+{% block content %}
+<h1>Cruise destinations</h1>
+
+<a class="btn btn-primary" href="{% url 'destination_form' %}">Add destination</a>
+
+<p>
+    If you can imagine it, we travel to it! Below is our list of confirmed destinations.
+</p>
+<ul class="list-group">
+    {% for destination in destinations %}
+    <a class="list-group-item list-group-item-action" href="{% url 'destination_detail' destination.id %}">
+        {{ destination.name }} (Popularity: {{ destination.calculated_popularity }})
+    </a>
+    {% endfor %}
+</ul>
+
+
+
+<!-- Botón para alternar entre mostrar los más populares y todos -->
+{% if show_all %}
+<a class="btn btn-secondary" href="{% url 'destinations' %}">Show less</a>
+{% else %}
+<a class="btn btn-secondary" href="{% url 'destinations' %}?show_all=1">Show more</a>
+{% endif %}
+{% endblock content %}

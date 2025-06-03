@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_form_tags %}
+
+{% block content %}
+
+<form method="post"> 
+
+    {% csrf_token %}
+
+    <p> Are you shure about that? "{{destination}}"!</p>
+
+    <input type="submit" value="Confirm">
+</form>
+{%endblock content%}

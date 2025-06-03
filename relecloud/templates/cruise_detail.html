@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ReleCloud - {{ cruise }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ cruise }}</h1>
+<p>{{ cruise.description }}</p>
+
+<p><strong>Average Rating:</strong> {{ average_rating|default:"No ratings yet" }}</p>
+
+<h2>Reviews:</h2>
+<ul>
+    {% for review in reviews %}
+    <li>
+        <strong>Rating:</strong> {{ review.rating }}<br>
+        <strong>Comment:</strong> {{ review.comment }}<br>
+        <em>Submitted on {{ review.created_at }}</em>
+    </li>
+    {% empty %}
+    <li>No reviews yet. Be the first to review!</li>
+    {% endfor %}
+</ul>
+
+<h3>Leave a Review:</h3>
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<p>You can explore the following destinations on this cruise:</p>
+<ul class="list-group">
+    {% for destination in cruise.destinations.all %}
+    <a class="list-group-item list-group-item-action" href="{% url 'destination_detail' destination.id %}">{{ destination }}</a>
+    {% endfor %}
+</ul>
+{% endblock content %}
