@@ -3,7 +3,7 @@ trigger:
 
 variables:
   azureServiceConnectionId: 'BorjaAzureRM'
-  webAppName: 'borja-relecloud-drhhfffnbbhcb0hf.spaincentral-01.azurewebsites.net'
+  webAppName: 'webAppName: 'borja-relecloud-drhhfffnbbhcb0hf'
   vmImageName: 'ubuntu-latest'
   environmentName: 'borja-relecloud-drhhfffnbbhcb0hf'
   projectRoot: $(System.DefaultWorkingDirectory)
